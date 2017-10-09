@@ -1,0 +1,25 @@
+//
+//  ItemTableViewCell.swift
+//  DreamLister
+//
+//  Created by KELVIN LING SHENG SIANG on 03/10/2017.
+//  Copyright © 2017 KELVIN LING SHENG SIANG. All rights reserved.
+//
+
+import UIKit
+
+class ItemTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var thumb: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var details: UILabel!
+    
+    func configureCell(item: Item) {
+        title.text = item.title
+        price.text = "$\(item.price)"
+        details.text = item.details
+        thumb.image = item.toImage?.image as? UIImage
+    }
+
+}
